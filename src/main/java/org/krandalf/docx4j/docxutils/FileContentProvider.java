@@ -29,7 +29,12 @@ public class FileContentProvider implements ContentProvider {
                 contentType = ContentTypes.IMAGE_PNG;
             } else if (target.toLowerCase().endsWith(".gif")) {
                 contentType = ContentTypes.IMAGE_GIF;
+            } else if (target.toLowerCase().endsWith(".docx")) {
+                contentType = ContentTypes.WORDPROCESSINGML_DOCUMENT;
+                //  "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
             }
+                
+           
             return new Content(data,contentType);
         } catch (IOException ex) {
             return null;          
